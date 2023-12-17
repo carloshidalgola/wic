@@ -1,0 +1,75 @@
+section.content-section {
+  padding: 50px;
+  background-color: #FFFFFF;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  .title-content {
+    mat-icon {
+      color: #00339F;
+    }
+  }
+
+  span.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23.04px;
+    line-height: 24px;
+    color: #00339F;
+    margin-right: 7.5vw;
+  }
+}
+
+.components-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "info-commerce info-commerce"
+    "config-terminal select-plate"
+    "img-component img-component";
+  gap: 30px;
+  place-items: center;
+  place-content: center;
+
+  .info-commerce {
+    grid-area: info-commerce;
+    width: 100%;
+  }
+
+  .config-terminal {
+    grid-area: config-terminal;
+    width: 100%
+  }
+
+  .select-plate {
+    grid-area: select-plate;
+    width: 100%
+  }
+
+  .img-component {
+    grid-area: img-component;
+    width: 100%;
+  }
+}
+
+.button-section {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  position: sticky;
+  bottom: 0;
+  gap: 100px;
+}
+
+novelties-upload-image-common {
+  z-index: 0!important;
+}

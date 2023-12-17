@@ -1,0 +1,157 @@
+
+
+.card{
+  
+  
+  margin-left: 3%;
+  margin-right: 3%;
+border-top-color: black;
+height: 80%;
+}
+.informativo{
+  height: 50%;
+  border-top-right-radius: 1em 10%;
+  border-top-left-radius: 1em 10%;
+  border-bottom-right-radius: 1em 10%;
+  border-bottom-left-radius: 1em 10%;
+  background:rgba(241, 237, 237, 0.651);
+
+}
+
+.arriba1{
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  position: relative;
+  
+}
+
+.classe{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+.classes{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+
+.arriba2{
+  height: 100%;
+  width: 25%;
+  position: relative;
+}
+.arriba3{
+  height: 100%;
+  width: 25%;
+  position: relative;
+}
+.arriba4{
+  height: 100%;
+  width: 25%;
+  position: relative;
+}
+.abajoboton{
+  background-color: #9c9c9c;
+  border-radius: 20px;
+  width: 100%;
+}
+.abajobotonlabel{
+  color: white;
+}
+.classearriba{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
+.classesarriba{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
+p{
+  margin: 0;
+}
+
+.div-content-arriba {
+  padding: 1vh;
+  border: 1px solid #d9d9d9;
+ 
+  border: white;
+ 
+  background-color: #9c9c9c;
+  border-top-right-radius: 1em 10%;
+  border-top-left-radius: 1em 10%;
+  
+}
+
+.div-content-centro {
+  padding: 1vh;
+
+  border: white;
+  background:rgba(241, 237, 237, 0.651);
+  
+}
+
+.div-content-abajo {
+  padding: 1vh;
+  border: 1px solid #d9d9d9;
+ 
+ 
+  border: white;
+  
+  
+  border-bottom-right-radius: 1em 10%;
+  border-bottom-left-radius: 1em 10%;
+  background:rgba(241, 237, 237, 0.651);
+  
+}
+  .info-data {
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5vh 0;
+  }
+    .data, .info {
+      width: 45%;
+    }
+
+    .data {
+      font-weight: 600;
+    }
+
+    .info {
+      overflow-wrap: break-word;
+    }
+    .infofecha {
+      overflow-wrap: break-word;
+      width: 45%;
+      text-align: center;
+    }
+
+
+    .dataarriba, .infoarriba, .infofechaarriba {
+      width: 45%;
+      color: white;
+    }
+
+    .infofechaarriba {
+      overflow-wrap: break-word;
+      width: 45%;
+      text-align: center;
+    }
+
+
+
+
+

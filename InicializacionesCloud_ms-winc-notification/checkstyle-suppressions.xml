@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<suppressions>
+    <suppress files=".+\.java" checks="SpringHeader" />
+    <suppress files=".+\.java" checks="RegexpSinglelineJava" />
+
+    <suppress files=".+\.java" checks="SpringImportOrder" />
+    <suppress files=".+\.java" checks="SpringJavadoc" />
+    <suppress files=".+\.java" checks="SpringTernary" />
+    <suppress files=".+\.java" checks="SpringMethodOrder" />
+    <suppress files=".+\.java" checks="SpringAvoidStaticImport" />
+    <suppress files=".+\.java" checks="JavadocStyle" />
+    <suppress files=".+\.java" checks="JavadocMethod" />
+    <suppress files=".+\.java" checks="JavadocVariable" />
+    <suppress files=".+\.java" checks="RequireThis" />
+    <suppress files=".+\.java" checks="Indentation" />
+    <suppress files=".+\.java" checks="Regexp" />
+    <suppress files=".+\.java" checks="NeedBraces" />
+    <suppress files=".+\.java" checks="RightCurly" />
+    <suppress files=".+\.java" checks="WhitespaceAfter" />
+    <suppress files=".+\.java" checks="WhitespaceAround" />
+    <suppress files=".+\.java" checks="OneStatementPerLine" />
+    <suppress files=".+\.java" checks="SpringHideUtilityClassConstructor" />
+    <suppress files=".+\.java" checks="VisibilityModifier" />
+</suppressions>

@@ -1,0 +1,79 @@
+<section>
+  <div class="header">
+    <div class="tittle flex-total-center">
+      <mat-icon class="flex-total-center">
+        search
+      </mat-icon>
+      <span>
+        Consulta
+      </span>
+    </div>
+    <button class="close-btn" mat-icon-button (click)="closeSidebar()">
+      <mat-icon>
+        close
+      </mat-icon>
+    </button>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="formData">
+
+      <mat-form-field
+      appearance="outline">
+        <mat-label>Tipo de Consulta *</mat-label>
+        <mat-select
+        formControlName="consulta"
+        (selectionChange)="cleanInput($event)">
+          <mat-option
+          *ngFor="let option of selectData"
+          [value]="option.code">
+            {{ option.description }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="id-input">
+        <mat-label>
+          {{ getConsultTypeTitle(formData.get('consulta')?.value) }} *
+        </mat-label>
+        <input matInput
+        formControlName="codigo"
+        maxlength="16"
+        (keypress)="validateFormat($event)">
+
+        <div class="check-validator" *ngIf="formData.get('codigo')?.valid">
+          <mat-icon aria-hidden="false">
+            check_circle_outline
+          </mat-icon>
+        </div>
+      </mat-form-field>
+
+      <p class="message" *ngIf="formData.get('codigo')?.valid">
+        {{ getConsultTypeTitle(formData.get('consulta')?.value) }} Correcta
+      </p>
+      <p *ngIf="formData.get('codigo')?.touched && formData.get('codigo')?.invalid">
+        Campo Placa/Terminal es requerido
+      </p>
+
+    </form>
+  </div>
+
+  <div class="buttons-container">
+    <button
+      mat-raised-button
+      class="redeban-btn-cancel-sidebar"
+      (click)="closeSidebar()"
+      >
+      Cancelar
+    </button>
+    <button
+      mat-raised-button
+      class="redeban-btn-accept"
+      [disabled]="formData.get('codigo')?.invalid"
+      [class.disabled]="formData.get('codigo')?.invalid"
+      (click)="consult()"
+    >
+      Consultar
+    </button>
+  </div>
+</section>

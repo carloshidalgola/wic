@@ -1,0 +1,23 @@
+section {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 80px;
+
+  .title-section {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 33.18px;
+    line-height: 56px;
+    color: #00339F;
+  }
+
+  .graphic-section {
+    margin: 50px 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}

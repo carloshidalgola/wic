@@ -1,0 +1,33 @@
+# PYR
+pyr:
+   ms:
+      defaultErrorCode: CUST-001
+      errorTablePrefix: bbbb
+      domain: test
+      name: name
+      version: version
+# PYR Audit Exclusion List
+   audit:
+      exclusionList:
+      - /actuator/*
+   error:
+      dynamodb:
+         enabled: true
+         region: eu-west-1
+         accessKey: aaaa
+         secretAccessKey: aaaa
+      elasticsearch:
+         enabled: true
+         host: "host_name"
+         port: 9200
+         schema: "http"
+         user: "some_username"
+         password: "some_password"
+
+#Timeouts
+   api:
+      timeout:
+         write: 30
+         read: 30
+         connect: 30
+         call: 30

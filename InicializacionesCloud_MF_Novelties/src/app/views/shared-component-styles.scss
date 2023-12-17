@@ -1,0 +1,94 @@
+// Buttons Styles
+button.redeban-btn-consult {
+  width: 220px;
+  height: 60px;
+  border-radius: 15px;
+  background: #00339F;
+  color: white;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-style: normal;
+  text-transform: uppercase;
+
+  mat-icon {
+    margin-right: 10px;
+  }
+}
+
+button.redeban-btn-help {
+  margin: 0 5vw;
+}
+
+button.redeban-btn-retom {
+  width: 220px;
+  height: 50px;
+  border-radius: 15px;
+  border: solid 2px #00339F;
+  background: white;
+  color: #00339F;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-style: normal;
+  box-shadow: 0px 4px 12px rgba(30, 35, 149, 0.24);
+  text-transform: uppercase;
+}
+
+button.redeban-btn-accept {
+  width: 250px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: #00339F;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+button.redeban-btn-cancel {
+  width: 250px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: white;
+  border: solid 2px #6B9CFF;
+  color: #6B9CFF;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+button.redeban-btn-cancel-sidebar {
+  width: 250px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: 1px solid #00339F;
+  color: #00339F;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-style: normal;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+// General Styles
+.flex-total-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.flex-vertical-center {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

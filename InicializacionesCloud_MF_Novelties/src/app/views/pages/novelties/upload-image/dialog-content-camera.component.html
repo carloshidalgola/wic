@@ -1,0 +1,30 @@
+<mat-dialog-content class="mat-typography">
+  <novelties-web-camera (pictureTaken)="handleImage($event)" [sizeNow]="sizeNow" [cantImage]="cantImage" [maxFileSize]="maxFileSize">
+  </novelties-web-camera>
+  <div fxLayout="row" fxLayoutGap="20px" fxLayout.gt="column">
+    <br>
+  </div>
+  <div fxLayout="row" fxLayoutGap="20px" fxLayout.gt="column">
+    <div fxFlex fxLayoutAlign="center" class="card camera" *ngFor="let f of data">
+      <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true"
+        (removed)="onRemove(f)">
+      </ngx-dropzone-image-preview>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div fxLayout="row" fxLayoutGap="20px" fxLayout.gt="column">
+    <div fxFlex fxLayoutAlign="center" class="card">
+      <h1></h1>
+    </div>
+    <div fxFlex fxLayoutAlign="center" class="card">
+      <h1></h1>
+    </div>
+    <div fxFlex fxLayoutAlign="center" class="card">
+      <button mat-button (click)="onNoClick()">Cancelar</button>
+    </div>
+    <div fxFlex fxLayoutAlign="center" class="card">
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+    </div>
+  </div>
+</mat-dialog-actions>

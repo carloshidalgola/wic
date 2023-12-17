@@ -1,0 +1,65 @@
+<section>
+  <div class="form-container">
+    <p class="form-title">
+      Por Número
+    </p>
+    <form [formGroup]="formData">
+      <fieldset>
+        <legend>Tipo de consulta * </legend>
+        <select formControlName="consulta"
+          (change)="cleanInput($event)"
+        >
+          <option *ngFor="let option of selectData" [value]="option.code">
+            {{ option.description }}
+          </option>
+        </select>
+      </fieldset>
+
+      <fieldset
+        [class.error]="formData.get('codigo')?.touched && formData.get('codigo')?.invalid"
+      >
+        <legend
+          [class.errorTitle]="formData.get('codigo')?.touched && formData.get('codigo')?.invalid"
+        >
+          {{ getConsultTypeTitle(formData.get('consulta')?.value) }} *
+        </legend>
+        <div class="input-container">
+          <input type="text"
+            formControlName="codigo"
+            maxlength="16"
+            (keypress)="validateFormat($event)">
+          <div class="check-validator" *ngIf="formData.get('codigo')?.valid">
+            <mat-icon aria-hidden="false">
+              check_circle_outline
+            </mat-icon>
+          </div>
+        </div>
+      </fieldset>
+      <p class="message" *ngIf="formData.get('codigo')?.valid">
+        {{ getConsultTypeTitle(formData.get('consulta')?.value) }} correcta
+      </p>
+      <p *ngIf="formData.get('codigo')?.touched && formData.get('codigo')?.invalid">
+        Campo Placa/Terminal es requerido
+      </p>
+    </form>
+  </div>
+
+  <div class="buttons-container">
+    <button
+      mat-raised-button
+      class="cancel-button"
+      (click)="cancel()"
+      >
+      Cancelar
+    </button>
+    <button
+      mat-raised-button
+      class="consult-button"
+      [disabled]="formData.get('codigo')?.invalid"
+      [class.disabled]="formData.get('codigo')?.invalid"
+      (click)="consult()"
+    >
+      Consultar
+    </button>
+  </div>
+</section>

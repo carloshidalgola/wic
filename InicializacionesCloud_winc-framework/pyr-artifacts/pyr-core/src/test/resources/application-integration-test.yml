@@ -1,0 +1,17 @@
+# OBP Dynamodb Test
+pyr:
+  error:
+    dynamodb:
+      enabled: true
+      url: 'http://localhost:30800'
+      region: local
+      accessKey: key
+      secretAccessKey: secret
+    elasticsearch:
+      enabled: true
+      host: localhost
+      port: 9200
+      schema: http
+      user: elastic
+      password: changeme
+

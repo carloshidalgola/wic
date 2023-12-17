@@ -1,0 +1,40 @@
+<div class="principal">
+
+    <button class="botonmenu"  [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>create</mat-icon>
+          <span>Gestionar sus Novedades</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>file_copy</mat-icon>
+          <span>Generación de reportes</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>library_books</mat-icon>
+          <span>Consulta de Tickets</span>
+        </button>
+    </mat-menu>
+
+
+
+
+  <mat-toolbar class="toolbar2">
+    <mat-icon class="iii">keyboard_backspace</mat-icon>
+    <p>
+    Gestión de Novedades
+  </p>
+
+  </mat-toolbar>
+
+
+
+    <button class="botonconsultar">
+        <mat-icon>search</mat-icon>
+    </button>
+
+
+
+</div>

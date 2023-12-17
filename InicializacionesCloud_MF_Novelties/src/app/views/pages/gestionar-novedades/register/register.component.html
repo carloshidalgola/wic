@@ -1,0 +1,84 @@
+<section class="content-section">
+  <div class="title-section">
+    <div class="title-content flex-vertical-center">
+      <span class="title">
+        Realizar Gesti&oacute;n de sus Novedades
+      </span>
+
+      <button mat-icon-button class="icon-button">
+        <mat-icon>
+          help_fill
+        </mat-icon>
+      </button>
+    </div>
+
+    <button mat-flat-button class="flex-total-center">
+      <mat-icon>
+        search
+      </mat-icon>
+      <span>
+        CONSULTAR
+      </span>
+    </button>
+  </div>
+
+  <div class="title-section">
+    <mat-stepper linear="true" #stepper>
+      <mat-step>
+        <ng-template matStepLabel></ng-template>
+        <app-search-first-step></app-search-first-step>
+        <section class="button-section flex-total-center">
+          <button mat-raised-button class="cancel" (click)="cancel()">
+            <span>
+              Cancelar
+            </span>
+          </button>
+          <button mat-flat-button class="process" mat-raised-button matStepperNext>
+            <span>
+              Siguiente
+            </span>
+          </button>
+        </section>
+      </mat-step>
+    
+      <mat-step [stepControl]="frmStepTwo">
+        <form [formGroup]="frmStepTwo">
+          <ng-template matStepLabel></ng-template>
+          <novelties-upload-image-common #uploadImage (siguientePaso)="onNextClicked()" class="img-component"
+            [tipoFormato]="tipoFormato" [tipoCantidadImagen]="tipoCantidadImagen" [id_asesor]="id_asesor">
+          </novelties-upload-image-common>
+        </form>
+    
+        <section class="button-section flex-total-center">
+          <button mat-raised-button class="cancel-button cancel" matStepperPrevious>
+            <span>
+              Volver
+            </span>
+          </button>
+          <button mat-flat-button class="process" mat-raised-button matStepperNext (click)="uploadImage.uploadImages()">
+            <span>
+              Siguiente
+            </span>
+          </button>
+        </section>
+      </mat-step>
+    
+      <mat-step>
+        <ng-template matStepLabel></ng-template>
+        <section class="button-section flex-total-center">
+          <button mat-raised-button class="cancel-button cancel" matStepperPrevious>
+            <span>
+              Volver
+            </span>
+          </button>
+          <button mat-flat-button class="process" mat-raised-button matStepperNext (click)="confirmar()">
+            <span>
+              Confirmar
+            </span>
+          </button>
+        </section>
+      </mat-step>
+    </mat-stepper>
+  </div> 
+</section>
+

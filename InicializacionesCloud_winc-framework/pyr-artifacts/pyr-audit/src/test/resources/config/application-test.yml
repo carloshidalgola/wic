@@ -1,0 +1,6 @@
+pyr:
+  ms:
+    domain: domain
+    name: name
+    version: version
+    instanceId: instanceId

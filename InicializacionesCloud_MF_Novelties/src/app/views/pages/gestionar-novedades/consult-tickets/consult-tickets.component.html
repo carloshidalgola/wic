@@ -1,0 +1,72 @@
+<mat-drawer-container class="all-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over" position="end" [(opened)]="opened">
+    <div class="title">
+      <p>
+        Consulta
+      </p>
+      <button mat-button (click)="closeSideBar()">
+        <mat-icon>
+          close
+        </mat-icon>
+      </button>
+    </div>
+    <app-search-ticket></app-search-ticket>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="principal">
+      <mat-toolbar class="toolbar1 display-center">
+        <button mat-stroked-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="goConsultNovelties()">
+            <mat-icon>create</mat-icon>
+            <span>Gestionar sus Novedades</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>file_copy</mat-icon>
+            <span>Generación de reportes</span>
+          </button>
+          <button mat-menu-item (click)="goConsultTickets()">
+            <mat-icon>library_books</mat-icon>
+            <span>Consulta de Tickets</span>
+          </button>
+        </mat-menu>
+
+      </mat-toolbar>
+
+      <mat-toolbar class="toolbar2">
+        <mat-icon>keyboard_backspace</mat-icon>
+        <span>Consultar Tickets</span>
+      </mat-toolbar>
+
+      <mat-toolbar class="toolbar3 display-center">
+            <button mat-stroked-button (click)="openSideBar()">
+              <mat-icon>search</mat-icon>
+            </button>
+      </mat-toolbar>
+    </div>
+
+    <br>
+    <mat-card class="card">
+        <p>Tickets Funcionando</p>
+    </mat-card>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<mat-drawer-container class="all-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over" position="end" [(opened)]="opened">
+    <div class="title">
+      <p>
+        Consulta
+      </p>
+      <button mat-button (click)="closeSideBar()">
+        <mat-icon>
+          close
+        </mat-icon>
+      </button>
+    </div>
+    <app-search-ticket></app-search-ticket>
+  </mat-drawer>

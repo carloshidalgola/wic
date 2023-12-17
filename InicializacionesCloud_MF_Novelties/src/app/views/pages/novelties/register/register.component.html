@@ -1,0 +1,57 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="98%">
+    <mat-card class="booking-card">
+      <mat-card-content>
+        <h2>Stepper</h2>
+
+        <div class="operation-detail container" fxLayout="row" fxLayoutAlign="center none">
+          <div fxFlex="98%">
+
+            <mat-stepper linear="true" #stepper>
+
+              <mat-step>
+                <ng-template matStepLabel></ng-template>
+                <app-search-first-step></app-search-first-step>
+                <div class="buttons-container">
+                  <button mat-raised-button
+                    class="cancel-button"
+                    (click)="cancel()"
+                    >
+                    Cancelar
+                  </button>
+                  <button mat-raised-button
+                    class="consult-button"
+                    matStepperNext
+                  >
+                    Siguiente
+                  </button>
+                </div>
+              </mat-step>
+
+              <mat-step [stepControl]="frmStepTwo">
+                <form [formGroup]="frmStepTwo">
+                  <ng-template matStepLabel></ng-template>
+                  <novelties-upload-image #uploadImage (siguientePaso)="onNextClicked()"></novelties-upload-image>
+                </form>
+                <button mat-button matStepperPrevious>Volver</button>
+                <!-- <button mat-button matStepperNext (childEvent)="$event">Siguiente</button> -->
+                <button mat-button (click)="uploadImage.uploadImages()">Siguiente</button>
+              </mat-step>
+
+              <mat-step>
+                <ng-template matStepLabel></ng-template>
+                <div>
+                  <button mat-button matStepperPrevious>Volver</button>
+                  <button mat-button (click)="confirmar()">Confirmar</button>
+                </div>
+              </mat-step>
+
+            </mat-stepper>
+
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

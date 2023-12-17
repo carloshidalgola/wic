@@ -1,0 +1,56 @@
+section {
+  .collapsible {
+    width: 100%;
+    background-color: #d9d9d9;
+    color: #727272;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px;
+    border: none;
+    overflow: hidden;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    mat-icon {
+      position: absolute;
+      font-size: 30px;
+      top: 15%;
+      right: 20px;
+      transition: all ease 0.25s;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+      top: 30%;
+    }
+  }
+
+  .collapsible:hover {
+    background-color: #888888;
+    color: white;
+  }
+
+  #collapsible-content {
+    padding: 2vh 1vh 1vh 1vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .hiddenInputs {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .show-hiden {
+    display: none;
+    overflow: hidden;
+  }
+}

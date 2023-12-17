@@ -1,0 +1,15 @@
+<section>
+  <button class="collapsible" (click)="openCollapsComponent()">
+    Información Comercio
+    <mat-icon [class.rotate]="showCollapsComponent === true">
+      arrow_drop_down
+    </mat-icon>
+  </button>
+  <div [class.show-hiden]="showCollapsComponent === false"
+    id="collapsible-content">
+    <div class="info-data" *ngFor="let item of infoData">
+      <span class="data">{{ item.data }}:</span>
+      <span class="info">{{ item.info }}</span>
+    </div>
+  </div>
+</section>

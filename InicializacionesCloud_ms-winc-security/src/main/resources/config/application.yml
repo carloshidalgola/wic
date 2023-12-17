@@ -1,0 +1,34 @@
+# SPRING CONFIGURATION - Do not remove
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: security
+  data:
+    mongodb:
+      database: winc-security
+      #      user: redeban-winc
+      #      password: ZCASWCsMoh74WsaI
+      uri: mongodb+srv://redeban-winc:ZCASWCsMoh74WsaI@cluster0.jy9a7gh.mongodb.net/
+  sleuth:
+    propagation:
+      type:
+        - b3
+        - w3c
+      opentracing:
+        enabled: true
+
+#logging.level.org.springframework.cloud.sleuth: INFO
+#logging.pattern.level: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}'
+
+# PYR Configuration properties - Do not remove
+pyr:
+  ms:
+    domain: security
+    name: security
+    version: @project.version@
+  oauth:
+    customClaims: bankId, customerId
+    customerId: claims.customerId
+    bankId: claims.bankId
+

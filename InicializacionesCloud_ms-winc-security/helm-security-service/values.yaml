@@ -1,0 +1,6 @@
+replicas: 1
+version: 'latest'
+
+# Service Specific
+security:
+  image: 451196654182.dkr.ecr.us-east-1.amazonaws.com/test/security-service

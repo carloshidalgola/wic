@@ -1,0 +1,111 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
+  type='text/css'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-lx-8 col-xxl-8 colorLetra">
+      <h3>Realizar cargue masiva de novedades</h3>
+    </div>
+
+    <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-lx-2 col-xxl-2">
+      <button mat-button (click)="procesarArchivo()" class="procesar" [disabled]="disabledProcesar">PROCESAR
+        ARCHIVO</button>
+    </div>
+
+    <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-lx-2 col-xxl-2">
+      <button mat-button (click)="consulta()" class="consultar">CONSULTA</button>
+    </div>
+  </div>
+  <download-template-novelites-web style="width: 100%;"></download-template-novelites-web>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lx-12 col-xxl-12">
+      <!-- <div class="custom-dropzone" ngx-dropzone [accept]="'image/jpg,image/png'" (change)="onSelect($event)" [disabled]="disabledCarga"> -->
+      <div class="custom-dropzone" ngx-dropzone accept="{{typeFilesStr}}" (change)="onSelect($event)"
+        [disabled]="disabledCarga" [maxFileSize]="maxFileSize" [multiple]="false">
+        <ngx-dropzone-label>
+          <div>
+            <h3>Arrastra y suelta los archivos aqui</h3>
+            <div class="container">
+              <div class="item">
+                <button mat-button>BUSCAR EN EL NAVEGADOR</button>
+              </div>
+            </div>
+            <h6>Solo se permiten archivos .xls soporta hasta 10,000 mil registros</h6>
+            <h6>Peso máximo 800 kb</h6>
+          </div>
+        </ngx-dropzone-label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row" *ngFor="let item of files">
+    <div class="col-sm-12 ">
+      {{item.name}}
+    </div>
+    <div class="col-sm-11">
+      <progress-novelites-web [value]="value" (start)="iniciar()" [statusOperation]="statusOperation">
+      </progress-novelites-web>
+    </div>
+    <div class="col-sm-1">
+      <button mat-button class="botonDescarga" (click)="onRemove(item)">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </div>
+  </div>
+  <br>
+
+  <div class="row error-back" *ngFor="let item of grillaResultado">
+
+    <div class="col-sm-12 letra-error">
+
+      <mat-icon aria-hidden="false" aria-label="Error" fontIcon="home"></mat-icon>{{item.message}}
+
+
+      <button (click)="descargarArchivoError()" *ngIf="item.showDetail">ver detalle</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      Mis últimos archivos
+    </div>
+  </div>
+  <br>
+
+
+  <div class="row">
+    <div class="col-md-offset-1  col-md-12 col-lg-12 col-lx-12 col-xxl-12">
+
+      <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+          <table class="table table-bordered table-list">
+            <thead>
+              <tr>
+                <th scope="col">NOMBRE DE ARCHIVO</th>
+                <th scope="col">USUARIO</th>
+                <th scope="col">ID CONSECUTIVO</th>
+                <th scope="col">FECHA DE CARGA</th>
+                <th scope="col">DESCARGAR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre de archivo cargado xls</td>
+                <td>jmiranda</td>
+                <td>21000</td>
+                <td>21/10/22</td>
+                <td>descargar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

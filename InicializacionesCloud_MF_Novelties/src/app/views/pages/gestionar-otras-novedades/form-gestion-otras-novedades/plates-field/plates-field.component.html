@@ -1,0 +1,45 @@
+<div class="form-container">
+
+  <div class="form-panel-heading">
+    Placa
+  </div>
+
+  <div class="form-panel-body flex-total-center">
+    <form class="flex-total-center">
+
+      <mat-form-field class="example-chip-list " appearance="fill"
+      [class.invalidInput]="!validateField() && placaCtrl.touched">
+        <mat-label class="mat-label">ID de Placas</mat-label>
+        <mat-chip-list #chipList aria-label="Fruit selection" class="mat-chip-list" [disabled]="opened">
+         <div class="chip-list-contenedor">
+          <div class="chip-div">
+            <mat-chip class="mat-chip" *ngFor="let placa of placas" [selectable]="selectable" [removable]="removable"
+              (removed)="remove(placa)">
+              {{placa}}
+              <button matChipRemove *ngIf="removable">
+                <mat-icon class="cancel-mat">cancel</mat-icon>
+              </button>
+            </mat-chip>
+          </div>
+
+          <div class="mat-input-div">
+            <input class="text-input" maxlength="10"
+            placeholder="Ingresar la Placa"
+            #placaInput [formControl]="placaCtrl"
+            oninput="this.value = this.value.replace(/[^0-9]/gi,'')"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+          </div>
+         </div>
+        </mat-chip-list>
+      </mat-form-field>
+
+      <p class="error-message"
+      *ngIf="!validateField() && placaCtrl.touched">
+        Campo Placa requerido
+      </p>
+    </form>
+  </div>
+
+</div>

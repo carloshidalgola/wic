@@ -1,0 +1,28 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - wget https://jcenter.bintray.com/org/apache/maven/apache-maven/3.6.3/apache-maven-3.6.3-bin.tar.gz 
+      - tar xzvf apache-maven-3.6.3-bin.tar.gz -C /opt/
+      - export PATH=/opt/apache-maven-3.6.3/bin:$PATH
+  build:
+    commands:
+      - mvn test sonar:sonar -Dsonar.host.url=$SONARQUBE_URL -Dsonar.login=$SONARQUBE_USERNAME -Dsonar.password=$SONARQUBE_PASSWORD
+  post_build:
+    commands:
+      - |
+        if [[ $CODEBUILD_BUILD_SUCCEEDING == 1 ]] ; then 
+          mvn deploy -Dmaven.test.skip -DaltDeploymentRepository=releases::default::s3://s3mavenrepositoryeuwest1001/releases
+          git config --global credential.helper '!aws codecommit credential-helper $@'
+          git config --global credential.UseHttpPath true
+          git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/obp-framework
+          cd obp-framework
+          MVN_VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+          cleanversion=$(echo "$MVN_VERSION" | cut -f1 -d"-")
+          git config --global user.email "obp-devops@obp.com"
+          git config --global user.name "OBP DevOps"
+          git tag "v$cleanversion"
+          git push origin "v$cleanversion"
+        fi

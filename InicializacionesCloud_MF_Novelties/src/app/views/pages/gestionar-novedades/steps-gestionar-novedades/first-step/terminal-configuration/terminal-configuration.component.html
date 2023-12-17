@@ -1,0 +1,87 @@
+<mat-expansion-panel expanded="true">
+
+  <mat-expansion-panel-header>
+    Información Comercio
+  </mat-expansion-panel-header>
+
+  <ng-template matExpansionPanelContent>
+    <form class="content" [formGroup]="formTerminalData">
+      <mat-form-field appearance="outline">
+        <mat-label>Novedad *</mat-label>
+        <mat-select
+        formControlName="novelty">
+          <mat-option value="0">Seleccione uno</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Causal Noverdad *</mat-label>
+        <mat-select
+        formControlName="causalNoveltie">
+          <mat-option value="0">Seleccione uno</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Load Param *</mat-label>
+        <mat-select
+        formControlName="loadParam">
+          <mat-option value="0">Seleccione uno</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Texto Adicional</mat-label>
+        <input matInput
+        placeholder="Escriba aquí su texto..."
+        formControlName="aditionalText">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Grupo *</mat-label>
+        <mat-select
+        formControlName="group">
+          <mat-option value="0">Seleccione uno</mat-option>
+          <mat-option value="1">Option 1</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"
+      *ngIf="formTerminalData.get('group')?.value !== '0'">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker"
+        formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"
+      *ngIf="formTerminalData.get('group')?.value !== '0'">
+        <mat-label>Llave</mat-label>
+        <mat-select
+        formControlName="key">
+          <mat-option value="0">Seleccione uno</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline"
+      *ngIf="formTerminalData.get('group')?.value !== '0'">
+        <mat-label>N° Caso</mat-label>
+        <input matInput
+        placeholder="Escriba aquí su texto..."
+        formControlName="caseNumber">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"
+      *ngIf="formTerminalData.get('group')?.value !== '0'">
+        <mat-label>Modelo de Datáfono</mat-label>
+        <mat-select
+        formControlName="dataphoneModel">
+          <mat-option value="0">Seleccione uno</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </ng-template>
+
+</mat-expansion-panel>

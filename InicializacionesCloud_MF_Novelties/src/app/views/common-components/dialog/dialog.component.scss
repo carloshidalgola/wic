@@ -1,0 +1,56 @@
+.content-section {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px 50px;
+  gap: 35px;
+
+  mat-icon {
+    color: #FE502F;
+    font-size: 30px;
+  }
+
+  p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #666;
+  }
+}
+::ng-deep mat-dialog-container {
+  border-radius: 12px !important;
+}
+.button-section {
+  gap: 30px;
+
+  button {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px 20px;
+
+    &.cancelar {
+      color: #9EBEFF;
+    }
+
+    &.confirmar {
+      color: #00339F;
+    }
+  }
+}
+
+.flex-total-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

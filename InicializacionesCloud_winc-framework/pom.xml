@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>2.7.3</version>
+	</parent>
+
+	<groupId>com.mdp.pyr.framework</groupId>
+	<artifactId>architecture</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>framework</name>
+	<description>PYR Framework</description>
+
+	<modules>
+		<module>pyr-dependencies</module>
+		<module>pyr-artifacts</module>
+		<module>pyr-starter</module>
+	</modules>
+
+	<properties>
+		<pyr.version>0.0.1-SNAPSHOT</pyr.version>
+		<java.version>11</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+    <!--repositories>
+      <repository>
+        <id>pyr-snapshots</id>
+        <name>pyr-snapshots</name>
+        <url>s3://s3mavenrepositoryeuwest1001/snapshots</url>
+      </repository>
+      <repository>
+        <id>pyr-releases</id>
+        <name>pyr-releases</name>
+        <url>s3://s3mavenrepositoryeuwest1001/releases</url>
+      </repository>
+    </repositories>
+
+  <distributionManagement>
+      <snapshotRepository>
+        <id>pyr-snapshots</id>
+        <name>pyr-snapshots</name>
+        <url>s3://s3mavenrepositoryeuwest1001/snapshots</url>
+      </snapshotRepository>
+      <repository>
+        <id>pyr-releases</id>
+        <name>pyr-releases</name>
+        <url>s3://s3mavenrepositoryeuwest1001/releases</url>
+      </repository>
+  </distributionManagement-->
+</project>

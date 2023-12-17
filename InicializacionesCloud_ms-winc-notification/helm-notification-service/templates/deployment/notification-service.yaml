@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-service
+  labels:
+    app: notification-service
+  namespace: inicializacionesweb-test
+spec:
+  replicas: { { .Values.replicas } }
+  selector:
+    matchLabels:
+      app: notification-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        timestamp: { { now | quote } }
+      labels:
+        app: notification-service
+    spec:
+      containers:
+        - image: { { .Values.notification.image } }:{{ .Values.version }}
+          imagePullPolicy: Always
+          name: notification-service
+          resources:
+            requests:
+              memory: "512Mi"
+            limits:
+              memory: "1024Mi"
+          command: [ "sh", "-c", "exec java -XX:+PrintFlagsFinal -XshowSettings:vm -Xms512m -Xmx1024m -Duser.timezone=America/Bogota  -Dspring.profiles.active=local -XshowSettings:vm -jar /opt/ms-winc-notification.jar" ]
+          ports:
+            - containerPort: 8100
+              protocol: TCP
+          env:
+            - name: TZ
+              value: America/Bogota
+            - name: ENV
+              value: dev

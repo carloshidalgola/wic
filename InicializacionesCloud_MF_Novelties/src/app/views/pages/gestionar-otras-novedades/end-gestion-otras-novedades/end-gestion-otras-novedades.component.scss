@@ -1,0 +1,119 @@
+section.content-section {
+  padding: 50px;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  .title-content {
+    mat-icon {
+      color: #00339F;
+    }
+  }
+
+  span.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23.04px;
+    line-height: 24px;
+    color: #00339F;
+  }
+}
+
+.components-section {
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+
+  .component-content, .button-section {
+    width: 100%;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 50px 0;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  .component-content {
+    height: 450px;
+    background-color: #E5EEFF;
+    gap: 50px;
+
+    &>mat-icon {
+      width: auto;
+      height: auto;
+      font-size: 150px;
+      color: #6B9CFF;
+    }
+
+    .result-div {
+      color: #00339F;
+      font-family: 'Roboto';
+      font-style: normal;
+      text-align: center;
+      line-height: normal;
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      .content-copy {
+        gap: 20px;
+        position: relative;
+
+        span {
+          font-size: 50px;
+          font-weight: 500;
+        }
+
+        button {
+          background: #DDE2E5;
+          border-radius: 6px;
+          color: #434445;
+          position: absolute;
+          right: 100px;
+        }
+      }
+
+    }
+
+    .message-div {
+      width: 600px;
+      height: 70px;
+      border: 1px solid #9EBEFF;
+      border-radius: 12px;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      color: #387AFF;
+    }
+  }
+
+  .button-section {
+    background-color: white;
+    gap: 50px;
+
+    p {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      color: #434445;
+    }
+
+    .button-container {
+      gap: 50px;
+    }
+  }
+}

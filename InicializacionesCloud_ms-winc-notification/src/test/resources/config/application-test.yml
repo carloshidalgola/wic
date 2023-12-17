@@ -1,0 +1,39 @@
+# FEIGN CLIENT PROPERTIES
+feign:
+  hystrix:
+    enabled: false
+
+# HYSTRIX CIRCUIT BREAKER
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        enabled: false
+
+# SERVER
+server:
+  compression:
+    enabled: true
+
+# SPRING
+spring:
+  data:
+    web:
+      pageable:
+        default-page-size: 20
+        max-page-size: 100
+  jackson:
+    serialization.indent_output: true
+  jpa:
+    open-in-view: false
+    repositories:
+      bootstrap-mode: DEFERRED
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+account:
+  currency: EUR

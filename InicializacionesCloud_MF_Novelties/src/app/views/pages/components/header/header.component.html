@@ -1,0 +1,41 @@
+<mat-toolbar class="header" color="primary">
+  <div class="section-tittle">
+    <button (click)="goGome()">
+      <mat-icon>
+        arrow_back
+      </mat-icon>
+    </button>
+    <span>
+      {{ title }}
+    </span>
+  </div>
+
+  <div class="user-section">
+    <span>
+      Marcela Jerez
+    </span>
+    <div class="user-avatar">
+      <img src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__medium__webp/public/temas/test-madurez_1_jpg.webp" alt="">
+    </div>
+    <button
+    [matMenuTriggerFor]="userMenu">
+      <mat-icon>expand_more</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Ver Perfil</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Configuracion</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Salir</span>
+      </button>
+    </mat-menu>
+
+  </div>
+</mat-toolbar>

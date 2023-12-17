@@ -1,0 +1,6 @@
+replicas: 1
+version: 'latest'
+
+# Service Specific
+notification:
+  image: 451196654182.dkr.ecr.us-east-1.amazonaws.com/test/notification-service

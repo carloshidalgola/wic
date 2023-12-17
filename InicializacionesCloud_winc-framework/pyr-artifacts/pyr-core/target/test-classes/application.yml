@@ -1,0 +1,11 @@
+# SPRING CONFIGURATION - Do not remove
+spring:
+  profiles:
+    active: test
+pyr:
+   api:
+      timeout:
+         write: 30
+         read: 30
+         connect: 30
+         call: 30

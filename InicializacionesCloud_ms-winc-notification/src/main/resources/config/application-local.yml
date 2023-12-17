@@ -1,0 +1,22 @@
+server.port: 8100
+spring:
+  application:
+    name: notification
+  data:
+    mongodb:
+      database: winc-notification
+      #      user: redeban-winc
+      #      password: ZCASWCsMoh74WsaI
+      uri: mongodb+srv://rbm_iniwenb:Wh9DpifN3URMPi0U@rdbn-inicializaciones-web-cloud-test-pl-0.utnfn.mongodb.net
+
+
+pyr:
+  ms:
+    defaultErrorCode: ACC-000
+    errorTablePrefix: error-catalogue
+
+
+
+aws:
+  secretsmanager:
+    region: eu-west-1

@@ -1,0 +1,42 @@
+section.content-section {
+  padding: 50px;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  .title-content {
+    mat-icon {
+      color: #00339F;
+    }
+  }
+
+  span.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23.04px;
+    line-height: 24px;
+    color: #00339F;
+    margin-right: 7.5vw;
+  }
+}
+
+.components-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #434445;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+}

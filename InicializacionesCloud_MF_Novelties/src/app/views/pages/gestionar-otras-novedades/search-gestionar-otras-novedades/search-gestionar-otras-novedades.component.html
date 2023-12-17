@@ -1,0 +1,36 @@
+<section>
+  <div class="form-container">
+    <div class="datauser">
+
+    </div>
+    <form [formGroup]="formData">
+
+      <fieldset [class.error]="formData.get('codigo')?.touched && formData.get('codigo')?.invalid">
+        <legend [class.errorTitle]="formData.get('codigo')?.touched && formData.get('codigo')?.invalid">
+          Comercio
+        </legend>
+        <div class="input-container">
+          <input type="text" formControlName="codigo" maxlength="10" (keypress)="validateFormat($event)">
+          <div class="check-validator" *ngIf="formData.get('codigo')?.valid">
+            <mat-icon class="iconcheck" aria-hidden="false">
+              check_circle_outline
+            </mat-icon>
+          </div>
+        </div>
+      </fieldset>
+      <p *ngIf="formData.get('codigo')?.touched && formData.get('codigo')?.invalid">
+        Campo Comercio es requerido
+      </p>
+    </form>
+  </div>
+
+  <div class="buttons-container">
+    <button mat-raised-button class="cancel-button" (click)="cancel()">
+      Cancelar
+    </button>
+    <button mat-raised-button class="consult-button" [disabled]="formData.get('codigo')?.invalid"
+      [class.disabled]="formData.get('codigo')?.invalid" (click)="consult()">
+      Consultar
+    </button>
+  </div>
+</section>

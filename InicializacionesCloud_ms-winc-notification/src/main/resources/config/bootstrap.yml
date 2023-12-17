@@ -1,0 +1,7 @@
+aws:
+  secretsmanager:
+    enabled: ${SECRETSMANAGER-ENABLED:false}
+    name: ${DOMAIN}
+    defaultContext: shared-services
+    failFast: false
+    region: eu-west-1

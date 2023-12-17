@@ -1,0 +1,33 @@
+.actionBtn {
+  font-size: 4em;
+  cursor: pointer;
+}
+
+.snapshot {
+  text-align: center;
+
+  img {
+    max-width: 800px;
+    max-height: 800px;
+  }
+}
+
+ul.links {
+  padding-bottom: 20px;
+}
+
+.not-disabled {
+  color: '';
+  border: '';
+}
+
+.disabled {
+  color: gray;
+  border: medium solid gray;
+  pointer-events: none;
+  opacity: 0.3 !important;
+}
+
+.card {
+  border:0px !important;
+}

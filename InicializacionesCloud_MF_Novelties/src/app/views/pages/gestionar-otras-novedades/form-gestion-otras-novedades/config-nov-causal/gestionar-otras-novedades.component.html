@@ -1,0 +1,53 @@
+<div class="form-container">
+
+  <div class="form-panel-heading">
+    Configuración Terminal
+  </div>
+
+  <div class="form-panel-body flex-center-style">
+    <form [formGroup]="formConfigTerminal" class="flex-center-style">
+
+      <div class="input-container">
+        <mat-form-field appearance="fill" class="form-select-control"
+        [class.inputError]="formConfigTerminal.get('novedad')?.invalid && formConfigTerminal.get('novedad')?.touched">
+          <mat-select formControlName="novedad"
+          [disabled]="opened"
+          (selectionChange)="setCausalValues($event)"
+          placeholder="Novedad *">
+            <mat-option
+              *ngFor="let option of listNovelties"
+              [value]="option.code">
+              {{ option.description }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="error-message"
+        *ngIf="formConfigTerminal.get('novedad')?.invalid && formConfigTerminal.get('novedad')?.touched">
+          Campo Novedad requerido
+        </p>
+      </div>
+
+      <div class="input-container">
+        <mat-form-field appearance="fill" class="form-select-control"
+        [class.inputError]="formConfigTerminal.get('causal')?.invalid && formConfigTerminal.get('causal')?.touched">
+          <mat-select formControlName="causal"
+          [disabled]="opened"
+          (selectionChange)="validateField(); setCausal($event)"
+          placeholder="Causal *">
+            <mat-option
+              *ngFor="let option of listCausalFilter"
+              [value]="option.code">
+              {{ option.description }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="error-message"
+        *ngIf="formConfigTerminal.get('causal')?.invalid && formConfigTerminal.get('causal')?.touched">
+          Campo Causal Novedad requerido
+        </p>
+      </div>
+
+    </form>
+  </div>
+
+</div>

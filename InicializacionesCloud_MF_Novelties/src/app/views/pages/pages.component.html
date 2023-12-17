@@ -1,0 +1,51 @@
+<mat-drawer-container hasBackdrop="true">
+
+  <mat-drawer #drawer
+    [(opened)]="sidebarSwitch"
+    [position]="sidebarParams.position"
+    [mode]="sidebarParams.mode"
+    [disableClose]="sidebarParams.disableClose"
+  >
+    <ng-container *ngComponentOutlet="sidebarContent"></ng-container>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <section>
+      <aside (click)="openMainSidebar()">
+        <div class="side-navbar redeban_gradient">
+          <img src="./assets/Logo_Redeban_small.png" alt="">
+          <a routerLink="/dashboard"
+          routerLinkActive="link-active">
+            <mat-icon>dashboard</mat-icon>
+          </a>
+          <a routerLink="/gestionar-novedades"
+          routerLinkActive="link-active">
+            <mat-icon>batch_prediction</mat-icon>
+          </a>
+          <a routerLink="/generacion-reportes"
+          routerLinkActive="link-active">
+            <mat-icon>insert_chart</mat-icon>
+          </a>
+          <a routerLink="/consultar-tickets"
+          routerLinkActive="link-active">
+            <mat-icon>find_replace</mat-icon>
+          </a>
+          <a routerLink="/gestionar-otras-novedades"
+          routerLinkActive="link-active">
+            <mat-icon>settings_applications</mat-icon>
+          </a>
+        </div>
+        <div class="navbar-sep">&nbsp;</div>
+      </aside>
+
+      <main>
+        <app-header></app-header>
+
+        <router-outlet></router-outlet>
+      </main>
+
+    </section>
+
+  </mat-drawer-content>
+
+</mat-drawer-container>

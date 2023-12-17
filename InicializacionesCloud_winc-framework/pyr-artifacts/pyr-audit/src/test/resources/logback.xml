@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="audit" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+      <providers>
+        <timestamp>
+          <fieldName>timestamp</fieldName>
+          <pattern>yyyy-MM-dd HH:mm:ss.SSS</pattern>
+        </timestamp>
+        <loggerName>
+          <fieldName>logger</fieldName>
+        </loggerName>
+        <pattern>
+          <pattern>
+            {
+            "message": "#asJson{%message}"
+            }
+          </pattern>
+        </pattern>
+      </providers>
+    </encoder>
+  </appender>
+
+  <logger name="com.mdp.pyr.framework.audit.service.AuditService" level="INFO" additivity="false">
+    <appender-ref ref="audit"/>
+  </logger>
+
+</configuration>

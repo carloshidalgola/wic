@@ -1,0 +1,9 @@
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/Response.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/Request.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/AuditAction.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/User.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/Method.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/Operation.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/service/AuditService.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/Traffic.java
+/Users/abilio/Documents/REDEBAN/code-source/framework/pyr-artifacts/pyr-audit/src/main/java/com/mdp/pyr/framework/audit/domain/Type.java

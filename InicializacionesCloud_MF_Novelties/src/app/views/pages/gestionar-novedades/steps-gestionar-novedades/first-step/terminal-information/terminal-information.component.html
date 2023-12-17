@@ -1,0 +1,16 @@
+<mat-expansion-panel expanded="true">
+
+  <mat-expansion-panel-header>
+    Información de Terminal
+  </mat-expansion-panel-header>
+
+  <ng-template matExpansionPanelContent>
+    <div class="content">
+      <div class="info-data" *ngFor="let item of infoData">
+        <span class="data">{{ item.data }}:</span>
+        <span class="info">{{ item.info }}</span>
+      </div>
+    </div>
+  </ng-template>
+
+</mat-expansion-panel>

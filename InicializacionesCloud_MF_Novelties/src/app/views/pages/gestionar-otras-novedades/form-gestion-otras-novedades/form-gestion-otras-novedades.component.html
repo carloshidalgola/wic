@@ -1,0 +1,63 @@
+<section class="content-section">
+  <div class="title-section">
+    <div class="title-content flex-vertical-center">
+      <span class="title">
+        Realizar Gestión de sus Otras Novedades
+      </span>
+
+      <button mat-icon-button class="redeban-btn-help">
+        <mat-icon>
+          help_fill
+        </mat-icon>
+      </button>
+    </div>
+
+
+    <button mat-flat-button class="redeban-btn-consult flex-total-center">
+      <mat-icon>
+        search
+      </mat-icon>
+      <span>
+        CONSULTAR
+      </span>
+    </button>
+  </div>
+
+  <div class="components-section">
+    <app-info-comerce
+    (comerceId)="getComerceId($event)"
+    *ngIf="opened"
+    class="info-commerce"></app-info-comerce>
+
+    <app-config-nov-causal
+    (novedad)="getNovedad($event)"
+    (causal)="getCausal($event)"
+    *ngIf="opened"
+    class="config-terminal"></app-config-nov-causal>
+
+    <app-plates-field
+    (plates)="getPlates($event)"
+    *ngIf="opened" class="select-plate"></app-plates-field>
+
+    <novelties-upload-image-common
+    class="img-component"
+    [tipoFormato]="tipoFormato"
+    [tipoCantidadImagen]="tipoCantidadImagen"
+    [id_asesor]="id_asesor"
+    (eventUpdateFiles)="updateFiles()"></novelties-upload-image-common>
+  </div>
+
+</section>
+
+<section class="button-section flex-total-center">
+  <button mat-stroked-button class="redeban-btn-cancel">
+      CANCELAR
+  </button>
+  <button mat-flat-button class="redeban-btn-accept"
+  [disabled]="validateFields() === false"
+  (click)="openDialog(1);">
+    <span>
+      PROCESAR
+    </span>
+  </button>
+</section>

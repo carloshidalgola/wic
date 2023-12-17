@@ -1,0 +1,161 @@
+// ::ng-deep mat-horizontal-stepper .mat-horizontal-content-container {
+//     padding: 0;
+// }
+
+// .container {
+//   padding: 0;
+// }
+
+// div.container {
+//   border: none !important;
+// }
+
+// .operation-detail {
+//   padding: 0;
+// }
+
+// mat-step {
+//   box-sizing: border-box;
+//   padding: 0;
+//   margin: 0;
+// }
+
+
+.btn-steps {
+  border: none;
+  background-color: #0d88bc;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border-radius: 0.5rem;
+  transition: 0.2s;
+  &:hover {
+    background-color: #0d6a92;
+  }
+} 
+
+section.content-section {
+  padding: 50px;
+  background-color: #FFFFFF;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  .title-content {
+    mat-icon {
+      color: #00339F;
+    }
+  }
+
+  span.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23.04px;
+    line-height: 24px;
+    color: #00339F;
+    margin-right: 7.5vw;
+  }
+
+  &>button {
+    width: 220px;
+    height: 60px;
+    background: #00339F;
+    border-radius: 15px;
+    padding: 20px 0;
+    color: white;
+
+    mat-icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+.components-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "info-commerce info-commerce"
+    "config-terminal select-plate"
+    "img-component img-component";
+  gap: 30px;
+  place-items: center;
+  place-content: center;
+
+  .info-commerce {
+    grid-area: info-commerce;
+    width: 100%;
+  }
+
+  .config-terminal {
+    grid-area: config-terminal;
+    width: 100%
+  }
+
+  .select-plate {
+    grid-area: select-plate;
+    width: 100%
+  }
+
+  .img-component {
+    grid-area: img-component;
+    width: 100%;
+  }
+}
+
+.button-section {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  // position: absolute;
+  // bottom: 0;
+  gap: 100px;
+
+  button {
+    width: 250px;
+    height: 60px;
+    border-radius: 15px;
+  }
+
+  .cancel {
+    background-color: white;
+    border: solid 2px #6B9CFF;
+    color: #6B9CFF;
+  }
+
+  .process {
+    background-color: #00339F;
+    border: none;
+    color: white;
+  }
+}
+
+.flex-total-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+novelties-upload-image-common {
+  z-index: 0!important;
+}
+
+mat-stepper {
+  width: 100%!important;
+}

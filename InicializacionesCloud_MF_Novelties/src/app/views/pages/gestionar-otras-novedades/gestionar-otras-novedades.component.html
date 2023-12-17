@@ -1,0 +1,80 @@
+<mat-drawer-container class="allsss-containesr" hasBackdrop="true">
+
+    <mat-drawer #consultSideBar mode="over" position="end" [(opened)]="opened">
+        <div class="title">
+            <div class="iconsearchdiv">
+                <mat-icon class="iconsearchtitle">search</mat-icon>
+            </div>
+            <p>
+                Consulta
+            </p>
+            <button mat-button (click)="closeSideBar()">
+                <mat-icon>
+                    close
+                </mat-icon>
+            </button>
+        </div>
+        <app-search-gestionar-otras-novedades></app-search-gestionar-otras-novedades>
+    </mat-drawer>
+
+    <section class="content-section">
+        <div class="title-section">
+            <div class="title-content flex-vertical-center">
+                <span class="title">
+                    Otras Novedades
+                </span>
+
+                <button mat-icon-button class="redeban-btn-help">
+                    <mat-icon>
+                        help_fill
+                    </mat-icon>
+                </button>
+            </div>
+
+
+            <button mat-flat-button (click)="getFormNoveltySearchOtherNovelties()"
+                class="redeban-btn-consult flex-total-center">
+                <mat-icon>
+                    search
+                </mat-icon>
+                <span>
+                    CONSULTAR
+                </span>
+            </button>
+        </div>
+
+        <div class="components-section">
+            <div class="components-section">
+                <app-no-results [message]="message" [height]="height">
+                </app-no-results>
+            </div>
+
+            <br>
+            <strong class="titlenov">Novedades Pendientes</strong>
+            <br>
+            <br *ngIf="pendings==0">
+            <span *ngIf="pendings==0">No tienes novedades pendientes</span>
+            <br>
+            <mat-card class="card" *ngIf="pendings==1">
+                <div class="divdata">
+                    <strong class="datanovedad">N° Ticket:</strong>
+                    <span class="datanovedad">{{NroTicket}}</span>
+                </div>
+                <div class="divdata">
+                    <span class="datafecha">{{Date}}</span>
+                </div>
+                <div class="divdata">
+                    <span class="data">Comercio:</span>
+                    <span class="data">{{IdCommerce}}</span>
+                </div>
+                <div class="divboton">
+                    <button mat-raised-button class="btnretomar" (click)="goReturn()">
+                        RETOMAR
+                    </button>
+                </div>
+            </mat-card>
+        </div>
+
+    </section>
+
+</mat-drawer-container>

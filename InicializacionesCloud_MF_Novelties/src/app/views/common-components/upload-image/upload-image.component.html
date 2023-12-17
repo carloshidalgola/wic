@@ -1,0 +1,69 @@
+<div class="form-container">
+  <label class="title-info">Adjuntar im&aacute;genes</label>
+
+  <button (click)="pruebas()" id="autoclick" style="display: none;"></button>
+
+  <div class="custom" ngx-dropzone accept="{{typeFilesStr}}" (change)="onSelect($event)" [disabled]="disabledCarga"
+    [maxFileSize]="maxFileSize">
+    <ngx-dropzone-label>
+      <div>
+        <div>
+          <mat-icon style="font-size: 40px">cloud_upload</mat-icon>
+        </div>
+        <div>
+          <h4 class="info-dropzone">Arrastra y suelta las im&aacute;genes aqu&iacute;</h4>
+        </div>
+        <div>
+          <button mat-button class="button-navegador"><label class="label-button">BUSCAR EN EL
+              NAVEGADOR</label></button>
+        </div>
+        <div class="div-text-info">
+          <h6 class="tex-info">Solo se permiten archivos {{typeFilesMessage}}<br> Peso m&aacute;ximo {{sizeMax}}</h6>
+        </div>
+
+      </div>
+    </ngx-dropzone-label>
+  </div>
+  <br><br>
+  <div id="camera" class="custom" (click)="openDialog()" [ngClass]="condition">
+    <ngx-dropzone-label>
+  
+      <div>
+        <div>
+          <mat-icon style="font-size: 40px">add_a_photo</mat-icon>
+        </div>
+        <div>
+          <h4 class="info-dropzone">Tomar foto desde dispositivo</h4>
+        </div>
+      </div>
+    </ngx-dropzone-label>
+  </div>
+  <br>
+  <div *ngIf="files.length>0">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3" class="subtitle">Im&aacute;genes Cargadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of files">
+          <td align="left" class="oneColumn">
+            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="item" [removable]="true"
+              (removed)="onRemove(item)">
+            </ngx-dropzone-image-preview>
+          </td>
+          <td class="twoColumn">{{item.name}}</td>
+          <td class="threeColumn">
+
+            <div class="flex-v-center">
+
+              <mat-icon (click)="onRemove(item)" style="font-size: 40px">delete_outline</mat-icon>
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,182 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+::ng-deep .example-headers-align .mat-expansion-panel-header-description {
+  justify-content: end;
+  align-items: center;
+}
+
+::ng-deep .example-headers-align .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+/*table*/
+
+::ng-deep .panel-table .panel-body .table-bordered {
+  border-style: none;
+  margin: 0;
+}
+
+::ng-deep .panel-table .panel-body .table-bordered>thead>tr>th:first-of-type {
+  text-align: center;
+  width: 100px;
+}
+
+::ng-deep .panel-table .panel-body .table-bordered>thead>tr>th:last-of-type,
+.panel-table .panel-body .table-bordered>tbody>tr>td:last-of-type {
+  border-right: 0px;
+}
+
+::ng-deep .panel-table .panel-body .table-bordered>thead>tr>th:first-of-type,
+.panel-table .panel-body .table-bordered>tbody>tr>td:first-of-type {
+  border-left: 0px;
+}
+
+::ng-deep .panel-table .panel-body .table-bordered>tbody>tr:first-of-type>td {
+  border-bottom: 0px;
+}
+
+::ng-deep .panel-table .panel-body .table-bordered>thead>tr:first-of-type>th {
+  border-top: 0px;
+}
+
+::ng-deep .panel-table .panel-footer .pagination {
+  margin: 0;
+}
+
+.card {
+  border:0px !important;
+}
+/*
+used to vertically center elements, may need modification if you're not using default sizes.
+*/
+::ng-deep .panel-table .panel-footer .col {
+  line-height: 34px;
+  height: 34px;
+}
+
+::ng-deep .panel-table .panel-heading .col h3 {
+  line-height: 30px;
+  height: 30px;
+}
+
+::ng-deep .panel-table .panel-body .table-bordered>tbody>tr>td {
+  line-height: 34px;
+}
+
+::ng-deep ngx-dropzone-image-preview img {
+  max-height: 158% !important;
+}
+
+
+::ng-deep .camera ngx-dropzone-image-preview img {
+  max-height: 424% !important;
+}
+
+
+::ng-deep ngx-dropzone-image-preview {
+  // margin-top: -47%!important;
+  // position: fixed!important;
+  height: 21px !important;
+  align-items: baseline !important;
+  min-height: 8px !important;
+
+}
+
+#camera {
+  display: flex;
+  align-items: center;
+  height: 180px;
+  background: #fff;
+  cursor: pointer;
+  color: #717386;
+  border: 2px dashed #717386;
+  border-radius: 5px;
+  font-size: 16px;
+  overflow-x: auto;
+
+}
+
+#camera ngx-dropzone-label {
+  text-align: center;
+  z-index: 10;
+  margin: 10px auto;
+}
+
+#camera.not-disabled {
+  color: '';
+  border: '';
+}
+
+#camera.disabled {
+  color: gray;
+  border: medium solid gray;
+  pointer-events: none;
+  opacity: 0.3 !important;
+}
+
+
+::ng-deep mat-dialog-container.mat-dialog-container {
+  position: relative;
+  overflow: auto;
+  width: 1025px;
+
+  @media (max-width: 568px) {
+    width: 440px;
+  }
+
+  @media (max-width: 468px) {
+    width: 340px;
+  }
+
+  @media (max-width: 368px) {
+    width: 300px;
+  }
+}
+
+
+::ng-deep ngx-dropzone-image-preview img {
+  max-height: 39px !important;
+
+  @media (max-width: 568px) {
+    max-height: 23px !important;
+
+  }
+
+  @media (max-width: 960px) {
+    max-height: 23px !important;
+
+  }
+
+  @media (max-width: 1270px) {
+    max-height: 23px !important;
+
+  }
+
+  @media (max-width: 468px) {
+    max-height: 23px !important;
+
+  }
+
+  @media (max-width: 368px) {
+    max-height: 23px !important;
+  }
+}

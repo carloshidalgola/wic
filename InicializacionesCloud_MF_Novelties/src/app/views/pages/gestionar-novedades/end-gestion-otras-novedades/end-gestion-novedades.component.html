@@ -1,0 +1,67 @@
+<section class="content-section">
+  <div class="title-section">
+    <div class="title-content flex-vertical-center">
+      <span class="title">
+        Realizar Gestión de sus Novedades
+      </span>
+
+      <button mat-icon-button class="icon-button">
+        <mat-icon>
+          help_fill
+        </mat-icon>
+      </button>
+    </div>
+
+
+    <button mat-flat-button class="flex-total-center">
+      <mat-icon>
+        search
+      </mat-icon>
+      <span>
+        CONSULTAR
+      </span>
+    </button>
+  </div>
+
+  <div class="components-section flex-total-center">
+    <div class="component-content flex-total-center">
+      <mat-icon>
+        verified
+      </mat-icon>
+
+      <div class="result-div">
+        <p>
+          Se ha actualizado el ticket con éxito, su número de ticket es:
+        </p>
+
+        <div class="content-copy flex-total-center">
+          <span>
+            {{numberTicket}}
+          </span>
+
+          <button mat-icon-button (click)="copy()">
+            <mat-icon>
+              content_copy
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="isNotify==1" class="message-div flex-total-center">
+        Se notificó satisfactoriamente al analista y operador
+      </div>
+    </div>
+
+    <div class="button-section flex-total-center">
+      <div class="button-container flex-total-center">
+        <button mat-stroked-button class="process" (click)="backHome()">
+          <span>
+            IR AL INICIO
+          </span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.mdp.pyr.framework</groupId>
+		<artifactId>pyr-artifacts</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>pyr-core</artifactId>
+	<packaging>jar</packaging>
+	<name>PYR Microservice Core</name>
+	<description>PYR Microservice Core Artifact</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mdp.pyr.framework</groupId>
+			<artifactId>pyr-audit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mdp.pyr.framework</groupId>
+			<artifactId>pyr-shared</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+		</dependency>
+		<!-- OAUTH specific dependencies -->
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>nimbus-jose-jwt</artifactId>
+			<version>8.5</version>
+		</dependency>
+	
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeScope>test</includeScope>
+							<includeTypes>so,dll,dylib</includeTypes>
+							<outputDirectory>${project.basedir}/native-libs</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!--Custom repository-->
+	<repositories>
+		<repository>
+			<id>dynamodb-local-frankfurt</id>
+			<name>DynamoDB Local Release Repository</name>
+			<url>https://s3.eu-central-1.amazonaws.com/dynamodb-local-frankfurt/release</url>
+		</repository>
+	</repositories>
+
+</project>

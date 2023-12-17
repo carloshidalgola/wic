@@ -1,0 +1,77 @@
+<section class="content-section">
+  <div class="title-section">
+    <div class="title-content flex-vertical-center">
+      <span class="title">
+        Realizar Gestión de sus Novedades
+      </span>
+
+      <button mat-icon-button class="redeban-btn-help">
+        <mat-icon>
+          help_fill
+        </mat-icon>
+      </button>
+    </div>
+
+
+    <button mat-flat-button class="redeban-btn-consult flex-total-center">
+      <mat-icon>
+        search
+      </mat-icon>
+      <span>
+        CONSULTAR
+      </span>
+    </button>
+  </div>
+
+  <mat-stepper [linear]="false" #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Configura</ng-template>
+
+      <app-search-first-step></app-search-first-step>
+
+      <section class="button-section flex-total-center">
+        <button mat-stroked-button class="redeban-btn-cancel">
+            CANCELAR
+        </button>
+        <button mat-stroked-button matStepperNext class="redeban-btn-accept">
+        <!-- (click)="openDialog('¿Estas seguro de procesar la novedad?')"> -->
+            SIGUIENTE
+        </button>
+      </section>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Adjunta</ng-template>
+
+      <!-- Component Second Step -->
+
+      <section class="button-section flex-total-center">
+        <button mat-stroked-button matStepperPrevious class="redeban-btn-cancel">
+          VOLVER
+        </button>
+        <button mat-stroked-button matStepperNext class="redeban-btn-accept">
+        <!-- (click)="openDialog('¿Estas seguro de procesar la novedad?')"> -->
+            SIGUIENTE
+        </button>
+      </section>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Notifica</ng-template>
+
+      <!-- Component Thrid Step -->
+
+      <section class="button-section flex-total-center">
+        <button mat-stroked-button matStepperPrevious class="redeban-btn-cancel">
+            VOLVER
+        </button>
+        <button mat-stroked-button class="redeban-btn-accept">
+        <!-- (click)="openDialog('¿Estas seguro de procesar la novedad?')"> -->
+            SIGUIENTE
+        </button>
+      </section>
+    </mat-step>
+
+  </mat-stepper>
+
+</section>

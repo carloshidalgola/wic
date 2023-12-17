@@ -1,0 +1,22 @@
+<div class="content-section flex-total-center">
+  <mat-icon>
+    verified
+  </mat-icon>
+
+  <p>{{ data.text }}</p>
+
+  <div class="button-section flex-total-center">
+    <button mat-flat-button
+    class="cancelar"
+    (click)="onNoClick()"
+    >
+      CANCELAR
+    </button>
+    <button mat-flat-button
+    class="confirmar"
+    (click)="onNoClick(true)"
+    >
+      CONFIRMAR
+    </button>
+  </div>
+</div>

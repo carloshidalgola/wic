@@ -1,0 +1,12 @@
+{
+  "/commerce/*": {
+    "target": "http://localhost:8090",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/parameters/*": {
+    "target": "http://localhost:8083",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

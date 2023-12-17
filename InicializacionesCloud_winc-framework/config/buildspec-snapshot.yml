@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - wget https://jcenter.bintray.com/org/apache/maven/apache-maven/3.6.3/apache-maven-3.6.3-bin.tar.gz 
+      - tar xzvf apache-maven-3.6.3-bin.tar.gz -C /opt/
+      - export PATH=/opt/apache-maven-3.6.3/bin:$PATH
+  build:
+    commands:
+      - mvn test
+  post_build:
+    commands:
+      - |
+        if [[ $CODEBUILD_BUILD_SUCCEEDING == 1 ]] ; then 
+          mvn deploy -Dmaven.test.skip -DaltDeploymentRepository=snapshots::default::s3://s3mavenrepositoryeuwest1001/snapshots
+        fi

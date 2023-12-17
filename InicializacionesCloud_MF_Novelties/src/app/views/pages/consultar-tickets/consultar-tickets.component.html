@@ -1,0 +1,40 @@
+<section class="content-section">
+
+  <div class="title-section">
+    <div class="title-content flex-vertical-center">
+      <span class="title">
+        Mis Tickets
+      </span>
+
+      <button mat-icon-button class="redeban-btn-help">
+        <mat-icon>
+          help_fill
+        </mat-icon>
+      </button>
+    </div>
+
+
+    <button mat-flat-button
+    class="redeban-btn-consult flex-total-center"
+    (click)="openSideBar()">
+      <mat-icon>
+        search
+      </mat-icon>
+      <span>
+        CONSULTAR
+      </span>
+    </button>
+  </div>
+
+  <div class="components-section">
+    <app-no-results
+    [message]="message"
+    [height]="height">
+    </app-no-results>
+
+    <p>Novedades Pendiendes</p>
+
+    <app-retomar></app-retomar>
+  </div>
+
+</section>

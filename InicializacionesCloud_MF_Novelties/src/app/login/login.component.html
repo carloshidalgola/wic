@@ -1,0 +1,41 @@
+<section class="flex-total-center">
+  <div class="form-section flex-total-center">
+    <div class="tittle-section flex-total-center">
+      <span>Bienvenido</span>
+      <img src="./assets/Logo_Redeban.png" alt="">
+    </div>
+
+    <form class="flex-total-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <a href="/dashboard" class="login-btn flex-total-center">
+        INICIAR SESIÓN
+      </a>
+    </form>
+
+    <div class="other-section flex-vertical-center">
+      <mat-checkbox color="primary">
+        Recordarme
+      </mat-checkbox>
+
+      <a href="">
+        Recuperar contraseña
+      </a>
+    </div>
+  </div>
+
+  <div class="img-background">
+    <img src="./assets/login_img.png" alt="">
+  </div>
+</section>
